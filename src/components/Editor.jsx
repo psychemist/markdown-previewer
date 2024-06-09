@@ -6,7 +6,7 @@ export default function Editor() {
 
     return (
         <>
-            <textarea name="editor" id="editor" cols="30" rows="10"></textarea>
+            <textarea value={text} name="editor" id="editor" cols="30" rows="10" placeholder="New text"></textarea>
         </>
     )
 }
