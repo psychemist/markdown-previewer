@@ -1,15 +1,19 @@
-import { useState } from 'react'
+import { useEffect, useState } from 'react'
 import Editor from './Editor'
 import Previewer from './Previewer'
 import '../styles/App.css'
 
-function App() {
-    return (
-        <>
-            <Editor />
-            <Previewer />
-        </>
-    )
-}
+export default function App() {
+  const [text, setText] = useState('Start here!')
 
-export default App
+  const handleChange = (markup) => {
+    setText(markup)
+  }
+
+  return (
+    <section>
+      <Editor text={text} changeText={handleChange} />
+      <Previewer text={text} />
+    </section>
+  )
+}
